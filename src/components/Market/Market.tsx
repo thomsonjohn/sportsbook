@@ -1,26 +1,27 @@
 import React from 'react';
+import { useFela } from 'react-fela';
 
-import { Card, Outcomes, TeamName, TitleWrapper, Versus } from './Market.styles';
 import { MarketProps } from './Market.types';
-
 import { Button } from './components/Button';
+import { styles } from './Market.styles';
 
 export const Market = (props: MarketProps) => {
   const { homeTeam, awayTeam, outcomes } = props;
+  const { css } = useFela();
   return (
-    <Card>
-      <TitleWrapper>
-        <TeamName>{homeTeam}</TeamName>
-        <Versus>vs</Versus>
-        <TeamName>{awayTeam}</TeamName>
-      </TitleWrapper>
-      <Outcomes>
+    <div className={css(styles.card)}>
+      <div className={css(styles.title)}>
+        <p className={css(styles.teamName)}>{homeTeam}</p>
+        <span className={css(styles.versus)}>vs</span>
+        <p className={css(styles.teamName)}>{awayTeam}</p>
+      </div>
+      <div className={css(styles.outcomes)}>
         {outcomes.map((outcome, index) => (
           <div key={`market${index}-${outcome}`}>
             <Button text={outcome} onClick={() => console.log(outcome)} />
           </div>
         ))}
-      </Outcomes>
-    </Card>
+      </div>
+    </div>
   );
 };

@@ -1,9 +1,15 @@
 import React from 'react';
+import { useFela } from 'react-fela';
 
-import { Outcome } from './Button.styles';
+import { styles } from './Button.styles';
 import { ButtonProps } from './Button.types';
 
 export const Button = (props: ButtonProps) => {
   const { text, onClick, active } = props;
-  return <Outcome onClick={onClick}>{text}</Outcome>;
+  const { css } = useFela();
+  return (
+    <button className={css(styles.button)} onClick={onClick}>
+      {text}
+    </button>
+  );
 };
