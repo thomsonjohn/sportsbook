@@ -70,18 +70,19 @@ export const CreateBet = () => {
       ...submitStatus,
       pending: true
     });
-    toast.promise(submitBet(bet), {
-      loading: 'Submitting bet...',
-      success: 'Success',
-      error: 'Oops! Something went wrong'
-    });
-    await submitBet(bet).then((res) => {
-      setSubmitStatus({
-        pending: false,
-        submitted: true,
-        success: res.success
+    toast
+      .promise(submitBet(bet), {
+        loading: 'Submitting bet...',
+        success: 'Success',
+        error: 'Oops! Something went wrong'
+      })
+      .then((res) => {
+        setSubmitStatus({
+          pending: false,
+          submitted: true,
+          success: res.success
+        });
       });
-    });
   };
 
   return (
