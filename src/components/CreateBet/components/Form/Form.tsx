@@ -28,6 +28,7 @@ export const Form = (props: FormProps) => {
       <input
         step=".01"
         type="number"
+        inputMode="decimal"
         id="stake"
         onChange={({ target }) => handleStakeChange(target.value)}
         onBlur={({ target }) => handleStakeBlur(target.value)}
@@ -38,6 +39,7 @@ export const Form = (props: FormProps) => {
       <input
         step=".01"
         type="number"
+        inputMode="decimal"
         id="odds"
         onChange={({ target }) => handleOddsChange(target.value)}
         onBlur={({ target }) => handleOddsBlur(target.value)}
