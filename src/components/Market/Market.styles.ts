@@ -20,6 +20,7 @@ export const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    maxWidth: '370px'
   }
 };

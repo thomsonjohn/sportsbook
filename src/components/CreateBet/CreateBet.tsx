@@ -2,7 +2,7 @@ import React, { useState, useContext, FormEvent, useEffect } from 'react';
 import { useFela } from 'react-fela';
 import toast from 'react-hot-toast';
 
-import { makeStyles } from './CreateBet.styles';
+import { styles } from './CreateBet.styles';
 
 import { Card } from '../Card';
 import { ViewMain } from '../ViewMain';
@@ -26,9 +26,6 @@ export const CreateBet = () => {
   });
   const isValid = stakeInput.length > 3 && oddsInput.length > 3;
   const { css } = useFela();
-  const styles = makeStyles({
-    isValid
-  });
 
   useEffect(() => {
     if (isValid && stakeInput && oddsInput) {

@@ -4,7 +4,7 @@ import { useFela } from 'react-fela';
 import Loader from 'react-loader-spinner';
 import { BigButton } from '../BigButton';
 import { FormProps } from './Form.types';
-import { makeStyles } from '../../CreateBet.styles';
+import { styles } from '../../CreateBet.styles';
 import BetContext from '../../../../context/BetContext';
 
 export const Form = (props: FormProps) => {
@@ -21,9 +21,6 @@ export const Form = (props: FormProps) => {
   } = props;
   const { clearBet } = useContext(BetContext);
   const { css } = useFela();
-  const styles = makeStyles({
-    isValid
-  });
   const potentialWinnings = (parseFloat(stakeInput) * parseFloat(oddsInput)).toFixed(2);
   return (
     <form className={css(styles.form)} onSubmit={(e) => handleSubmit(e)}>

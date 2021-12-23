@@ -1,8 +1,4 @@
-interface StyleProps {
-  isValid?: boolean;
-}
-
-export const makeStyles = ({ isValid }: StyleProps) => ({
+export const styles = {
   market: {
     display: 'flex',
     flexDirection: 'column',
@@ -29,6 +25,7 @@ export const makeStyles = ({ isValid }: StyleProps) => ({
     flexDirection: 'column',
     padding: '0 1em',
     alignItems: 'flex-start',
+    maxWidth: '370px',
     '& > label': {
       fontSize: '.75em',
       textTransform: 'uppercase',
@@ -68,4 +65,4 @@ export const makeStyles = ({ isValid }: StyleProps) => ({
     margin: '1.5em 0',
     cursor: 'pointer'
   }
-});
+};
