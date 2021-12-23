@@ -3,6 +3,9 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f4f7fb;
+  overflow: hidden;
+  padding-bottom: 50px;
 }
 
 .App-header {

@@ -1,11 +1,10 @@
 export const styles = {
   wrapper: {
-    backgroundColor: '#f4f7fb',
     color: '#333',
     padding: '0 2em',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     borderTopLeftRadius: '2em',
     borderTopRightRadius: '2em',
     flex: 1
